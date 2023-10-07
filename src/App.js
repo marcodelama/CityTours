@@ -1,10 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
-import Login from './components/Login';
+import { AuthContextProvider } from './context/AuthContext';
+import { MyRoutes } from './routers/MyRoutes';
 
 function App() {
-  return (
-    <Login/>
+  return (//MyRoutes = Children
+    <AuthContextProvider>
+      <MyRoutes />
+    </AuthContextProvider>
+
   );
 }
 
