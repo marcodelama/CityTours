@@ -8,7 +8,7 @@ import PagePrincipal from './components/PagePrincipal';
 
 function App() {
   return (
-    <Login/>
+    <PagePrincipal/>
   );
 }
 

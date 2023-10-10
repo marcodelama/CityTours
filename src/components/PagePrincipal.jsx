@@ -4,9 +4,14 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import '../Estilos/Login.css';
-import machupicchu from '../img/machupicchu.jpg';
 import vinicuna from '../img/vinicunca.jpg';
 import PlazaArequipa from '../img/PlazaArequipa.jpg';
+import Slider1 from '../img/Slider1.png';
+import Slider2 from '../img/Slider2.png';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 
 function Login() {
   const settings = {
@@ -22,19 +27,21 @@ function Login() {
   return (
     <>
       <div className='Body'>
-        <h1>Holaa</h1>
-        <Slider {...settings}>
-          <div>
-            <img className='SliderImg' src={machupicchu} alt="machupicchu" />
-          </div>
-          <div>
-            <img className='SliderImg' src={vinicuna} alt="vinicuna" />
-          </div>
-          <div>
-            <img className='SliderImg' src={PlazaArequipa} alt="PlazaArequipa" />
-          </div>
-        </Slider>
+  <Header />
+  <div className="SliderContainer">
+    <Slider {...settings}>
+      <div>
+        <img className='SliderImg' src={Slider1} alt="Slider1" />
       </div>
+      <div>
+        <img className='SliderImg' src={Slider2} alt="Slider2" />
+      </div>
+      <div>
+        <img className='SliderImg' src={PlazaArequipa} alt="PlazaArequipa" />
+      </div>
+    </Slider>
+  </div>
+</div>
     </>
   );
 }
