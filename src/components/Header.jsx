@@ -1,9 +1,9 @@
 import React from "react";
-import { Button } from 'primereact/button'
+
 function Header() {
     return (
         <div className="flex">
-            <i class="pi pi-check"></i>
+            <i class="pi pi-globe" style={{fontSize: "1rem"}}></i>
             <div>CityTours</div>
             <ul className="flex">
                 <li>Viajes/Lugares</li>
