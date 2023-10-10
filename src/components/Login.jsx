@@ -1,7 +1,13 @@
 import React from 'react';
 
-function Login(){
-
+function PagePrincipal() {
+    return (
+        <>
+        <div>
+            <Header/>
+        </div>
+        </>
+    )
 }
 
-export default Login;
+export default PagePrincipal;
