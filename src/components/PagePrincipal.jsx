@@ -7,7 +7,7 @@ import '../Estilos/PagePrincipal.css';
 import PlazaArequipa from '../img/PlazaArequipa.jpg';
 import Slider1 from '../img/Slider1.png';
 import Slider2 from '../img/Slider2.png';
-import LagunaHuachina from './LagunaHuacachina';
+import Sitios from './Sitios';
 import Footer from './Footer';
 
 
@@ -40,7 +40,7 @@ function Login() {
                         </div>
                     </Slider>
                 </div>
-                <LagunaHuachina/>
+                <Sitios/>
                 <Footer/> 
             </div>
         </>
