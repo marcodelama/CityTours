@@ -10,7 +10,7 @@ function Header() {
                 </div>
                 <div className="titulo"><a href="">CityTours</a></div>
             </div>
-            <ul className="flex align-items-center">
+            <ul className="flex align-items-center header-nav">
                 <li><i class="pi pi-map pr-2"></i><a href="">Viajes/Lugares</a></li>
                 <li><i className="pi pi-calendar pr-2"></i><a href="">Mis Reservas</a></li>
                 <li><i className="pi pi-comments pr-2"></i><a href="">Comentarios</a></li>

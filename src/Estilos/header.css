@@ -74,6 +74,13 @@ a:hover{
     align-items: center;
 }
 
+
+.header-nav li:hover{
+    background: #949494;
+    border-radius: 25px;
+    padding: 5px;
+}
+
 @media (max-width:380px){
     ul{
         display: none !important;
