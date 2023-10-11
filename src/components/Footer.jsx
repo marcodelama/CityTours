@@ -1,7 +1,6 @@
 import React from 'react';
 import '../Estilos/Footer.css'
 
-
 function Footer() {
     return (
         <div>
