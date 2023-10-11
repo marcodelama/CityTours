@@ -53,3 +53,29 @@ ul li{
     display: flex;
     font-weight: 600;
 }
+
+a{
+    text-decoration: none;
+    color: #222;
+    transition: font-size 0.3s ease; 
+}
+
+a:hover{
+    font-size: 18px;
+    transition: font-size 0.3s ease;
+}
+
+.black{
+    background: #222;
+    padding:3px 20px;
+    border-radius: 20px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width:380px){
+    ul{
+        display: none !important;
+    }
+}

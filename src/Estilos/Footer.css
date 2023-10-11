@@ -1,0 +1,51 @@
+.footer {
+    background-color: #ffffff;  /* Fondo blanco para un look minimalista */
+    border-top: 1px solid #e0e0e0;  /* Un delgado borde para separar del contenido */
+    color: #333;
+    padding: 60px 0;  /* Mayor relleno para dar amplitud */
+}
+
+.footer-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.branding {
+    flex: 1; /* Ocupa el espacio disponible */
+}
+
+.branding h3 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.branding p {
+    margin: 10px 0 0 0;
+    font-size: 16px;
+    color: #888;
+}
+
+.socials {
+    list-style-type: none;
+    padding: 0;
+}
+
+.socials li {
+    display: inline;
+    margin-right: 15px;
+}
+
+.socials li a {
+    text-decoration: none;
+    color: #888;
+    transition: color 0.3s;
+    font-size: 16px;
+}
+
+.socials li a:hover {
+    color: #555;
+}

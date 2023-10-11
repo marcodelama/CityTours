@@ -8,14 +8,14 @@ function Header() {
                 <div className="icono">
                     <i className="pi pi-prime flex justify-content-center"></i>
                 </div>
-                <div className="titulo">CityTours</div>
+                <div className="titulo"><a href="">CityTours</a></div>
             </div>
-            <ul>
-                <li><i class="pi pi-map"></i>Viajes/Lugares</li>
-                <li><i className="pi pi-calendar"></i>Mis Reservas</li>
-                <li><i className="pi pi-comments"></i>Comentarios</li>
-                <li><i className="pi pi-users"></i>Nosotros</li>
-                <li><i className="pi pi-phone"></i>Contacto</li>
+            <ul className="flex align-items-center">
+                <li><i class="pi pi-map pr-2"></i><a href="">Viajes/Lugares</a></li>
+                <li><i className="pi pi-calendar pr-2"></i><a href="">Mis Reservas</a></li>
+                <li><i className="pi pi-comments pr-2"></i><a href="">Comentarios</a></li>
+                <li><a className="black" href="">Contacto</a></li>
+                <li><i className="pi pi-users pr-2"></i><a href="">Nosotros</a></li>
             </ul>
         </div>
     )

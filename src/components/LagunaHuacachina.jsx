@@ -31,7 +31,7 @@ function LagunaHuachina() {
                         <td>{lugar.id_sitios}</td>
                         <td>{lugar.nombre}</td>
                         <td>{lugar.descripcion}</td>
-                        <td><iframe src={lugar.imagen} frameborder="0"></iframe></td>
+                        <td><img src={lugar.imagen} alt="Descripción de la imagen" style={{width:"100%"}} /></td>
                     </tr>
                 )}
             </tbody>

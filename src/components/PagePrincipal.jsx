@@ -8,6 +8,7 @@ import PlazaArequipa from '../img/PlazaArequipa.jpg';
 import Slider1 from '../img/Slider1.png';
 import Slider2 from '../img/Slider2.png';
 import LagunaHuachina from './LagunaHuacachina';
+import Footer from './Footer';
 
 
 
@@ -40,6 +41,7 @@ function Login() {
                     </Slider>
                 </div>
                 <LagunaHuachina/>
+                <Footer/> 
             </div>
         </>
     );

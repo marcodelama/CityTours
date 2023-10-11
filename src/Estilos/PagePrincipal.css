@@ -1,9 +1,16 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family: "Trip Sans VF","Trip Sans",Arial,sans-serif;
+}
+
 .Body {
-    background-color: #f2f8fa;
+    background-color: #fff;
   }
   
   .SliderContainer {
     width: 100%;
+    margin-top: 3%;
   }
   
   .slick-slider {
@@ -13,6 +20,6 @@
   /* Estilos para las imágenes en el slider */
   .SliderImg {
     max-width: 100%; /* Asegura que las imágenes no excedan el ancho del contenedor */
-    max-height: 550px;
+    max-height: 500px;
     margin: 0 auto; /* Centra horizontalmente la imagen */
   }
