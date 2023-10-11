@@ -1,0 +1,28 @@
+.Body {
+    background-color: rgb(231, 231, 231);
+    flex-direction: column; /* Alinea los elementos verticalmente */
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    height: 100vh;
+  }
+  
+  .SliderContainer {
+    max-width: 100%;
+  }
+  
+  /* Estilos para el contenedor del slider */
+  .slick-slider {
+    text-align: center; /* Centra horizontalmente el contenido del slider */
+  }
+  
+  /* Estilos para las imágenes en el slider */
+  .SliderImg {
+    max-width: 100%; /* Asegura que las imágenes no excedan el ancho del contenedor */
+    max-height: 550px;
+    margin: 0 auto; /* Centra horizontalmente la imagen */
+  }
+
+  .Header {
+    background-color: rgb(102, 102, 102);
+    height: 90px;
+  }

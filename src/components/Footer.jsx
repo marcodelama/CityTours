@@ -21,9 +21,9 @@ function Footer() {
                 <div className="socials">
                     <h4>Síguenos</h4>
                     <ul className='flex'>
-                        <li><a href="#"><i class="pi pi-facebook mr-2"></i>Facebook</a></li>
-                        <li><a href="#"><i class="pi pi-instagram mr-2"></i>Instagram</a></li>
-                        <li><a href="#"><i class="pi pi-twitter mr-2"></i>Twitter</a></li>
+                        <li><a href="#"><i className="pi pi-facebook mr-2"></i>Facebook</a></li>
+                        <li><a href="#"><i className="pi pi-instagram mr-2"></i>Instagram</a></li>
+                        <li><a href="#"><i className="pi pi-twitter mr-2"></i>Twitter</a></li>
                     </ul>
                 </div>
                 <div className="contact-info">
