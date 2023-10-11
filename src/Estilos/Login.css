@@ -1,6 +1,5 @@
 .Body {
-    background-color: blueviolet;
-    display: flex;
+    background-color: rgb(231, 231, 231);
     flex-direction: column; /* Alinea los elementos verticalmente */
     justify-content: center; /* Centra verticalmente */
     align-items: center; /* Centra horizontalmente */
@@ -8,8 +7,7 @@
   }
   
   .SliderContainer {
-    width: 100%;
-    max-width: 1000px;
+    max-width: 100%;
   }
   
   /* Estilos para el contenedor del slider */
@@ -22,4 +20,9 @@
     max-width: 100%; /* Asegura que las imágenes no excedan el ancho del contenedor */
     max-height: 550px;
     margin: 0 auto; /* Centra horizontalmente la imagen */
+  }
+
+  .Header {
+    background-color: rgb(102, 102, 102);
+    height: 90px;
   }

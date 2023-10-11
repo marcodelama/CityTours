@@ -4,10 +4,11 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import '../Estilos/Login.css';
-import vinicuna from '../img/vinicunca.jpg';
 import PlazaArequipa from '../img/PlazaArequipa.jpg';
 import Slider1 from '../img/Slider1.png';
 import Slider2 from '../img/Slider2.png';
+import Slider3 from '../img/Slider3.png';
+
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -37,7 +38,7 @@ function Login() {
         <img className='SliderImg' src={Slider2} alt="Slider2" />
       </div>
       <div>
-        <img className='SliderImg' src={PlazaArequipa} alt="PlazaArequipa" />
+        <img className='SliderImg' src={Slider3} alt="Slider3" />
       </div>
     </Slider>
   </div>
