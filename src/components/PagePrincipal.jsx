@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Navbar, Container, Form, FormControl, Button } from 'react-bootstrap';
 import { supabase } from '../supabase/createClient';
 import Header from './Header';
 import Slider from 'react-slick';
@@ -16,6 +15,11 @@ import Footer from './Footer';
 import { Dropdown } from 'primereact/dropdown'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../Estilos/PagePrincipal.css';
+import Huacachina from './sitios_turisticos/Huacachina';
+import Titicaca from './sitios_turisticos/Titicaca';
+import CañonColca from './sitios_turisticos/CañonColca';
+import MacchuPicchu from './sitios_turisticos/MacchuPicchu';
+import Plaza from './sitios_turisticos/Plaza';
 
 function Login() {
     const settings = {
@@ -40,7 +44,7 @@ function Login() {
     }
 
     const opcionesLugares = lugares?.map((item) => (
-        { nombre: item.nombre, code: item.clinica_id }
+        { nombre: item.nombre, code: item.id_sitios }
     ))
 
     useEffect(() => {
@@ -92,7 +96,31 @@ function Login() {
                         onChange={(e) => setSelectedLugar(e.value)}
                         style={{ height: "50px", width: "20%", marginBottom: "30px" }} />
                 </div>
-                <Sitios />
+                {
+                    selectedLugar && selectedLugar.nombre === "Laguna Huacachina" && <Huacachina />
+                }
+                {
+                    selectedLugar && selectedLugar.nombre === "Lago Titicaca" && <Titicaca />
+                }
+                {
+                    selectedLugar && selectedLugar.nombre === "Cañón del Colca" && <CañonColca />
+                }
+                {
+                    selectedLugar && selectedLugar.nombre === "Macchu Picchu" && <MacchuPicchu/>
+                }
+                {
+                    selectedLugar && selectedLugar.nombre === "Plaza de Armas de Cusco" && <Plaza/>
+                }
+                {
+                    selectedLugar && selectedLugar.nombre === "Zona Arqueológica Chan Chan" && <Titicaca />
+                }
+                {
+                    selectedLugar && selectedLugar.nombre === "Fortaleza de Kuelap" && <Titicaca />
+                }
+                {
+                    selectedLugar && selectedLugar.nombre === "Desierto de Sechura" && <Titicaca />
+                }
+
                 <Footer />
             </div>
         </>

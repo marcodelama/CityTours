@@ -1,19 +1,15 @@
 /* Footer.css */
 
-/* Estilos */
 .footer-content {
-    background-color: #333;
-    color: #fff;
-    padding: 30px;
-  }
-  
-
-.footer-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  background-color: #333;
+  color: #fff;
+  padding: 30px;
 }
 
+/* 
 .branding {
     flex: 1; 
 }
@@ -23,28 +19,36 @@ nav {
 }
 
 .socials {
-    flex: 1; 
-}
+    flex:1;
+} 
+
 
 .contact-info {
     flex: 1; 
+}*/
+
+.socials a {
+  color: #fff;
 }
 
-  /* Estilos para el pie de página inferior */
-  .footer-bottom {
-    background-color: #222;
-    padding: 10px 0;
-    text-align: center;
-  }
-  
-  .footer-bottom p {
-    color: #fff;
-    font-size: 14px;
-  }
-  
-  /* */
-  .pi {
-    font-size: 18px;
-    margin-right: 2px;
-  }
-  
+/* Estilos para el pie de página inferior */
+.footer-bottom {
+  background-color: #222;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.footer-bottom p {
+  color: #fff;
+  font-size: 14px;
+}
+
+/* */
+.pi {
+  font-size: 18px;
+  margin-right: 2px;
+}
+
+nav a {
+  color: #fff;
+}
