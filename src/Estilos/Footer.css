@@ -1,51 +1,50 @@
-.footer {
-    background-color: #ffffff;  /* Fondo blanco para un look minimalista */
-    border-top: 1px solid #e0e0e0;  /* Un delgado borde para separar del contenido */
-    color: #333;
-    padding: 60px 0;  /* Mayor relleno para dar amplitud */
-}
+/* Footer.css */
+
+/* Estilos */
+.footer-content {
+    background-color: #333;
+    color: #fff;
+    padding: 30px;
+  }
+  
 
 .footer-content {
-    max-width: 1000px;
-    margin: 0 auto;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
 }
 
 .branding {
-    flex: 1; /* Ocupa el espacio disponible */
+    flex: 1; 
 }
 
-.branding h3 {
-    margin: 0;
-    font-size: 24px;
-    color: #333;
-}
-
-.branding p {
-    margin: 10px 0 0 0;
-    font-size: 16px;
-    color: #888;
+nav {
+    flex: 1; 
 }
 
 .socials {
-    list-style-type: none;
-    padding: 0;
+    flex: 1; 
 }
 
-.socials li {
-    display: inline;
-    margin-right: 15px;
+.contact-info {
+    flex: 1; 
 }
 
-.socials li a {
-    text-decoration: none;
-    color: #888;
-    transition: color 0.3s;
-    font-size: 16px;
-}
-
-.socials li a:hover {
-    color: #555;
-}
+  /* Estilos para el pie de página inferior */
+  .footer-bottom {
+    background-color: #222;
+    padding: 10px 0;
+    text-align: center;
+  }
+  
+  .footer-bottom p {
+    color: #fff;
+    font-size: 14px;
+  }
+  
+  /* */
+  .pi {
+    font-size: 18px;
+    margin-right: 2px;
+  }
+  
