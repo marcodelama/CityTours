@@ -7,9 +7,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import PagePrincipal from './components/PagePrincipal';
 
+import ReservaViaje from './components/reserva/ReservaViaje';
+
 function App() {
   return (
-    <PagePrincipal/>
+    <div>
+      <PagePrincipal />
+      <ReservaViaje />
+    </div>
   );
 }
 
