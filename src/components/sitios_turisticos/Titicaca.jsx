@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { supabase } from '../../supabase/createClient';
 import Sitios from '../Sitios';
 
-function Huacachina() {
-    const [datosHuacachina, setDatosHuacachina] = useState(null);
+function Titicaca() {
+    const [datosTiticaca, setDatosTiticaca] = useState(null);
 
-    async function fetchHuacachina() {
+    async function fetchTiticaca() {
         const { data } = await supabase
             .from('sitios_turisticos')
             .select(`
@@ -15,31 +15,31 @@ function Huacachina() {
             precio_entrada,
             region: id_region (nombre)
         `)
-            .eq('nombre', 'Laguna Huacachina');
+            .eq('nombre', 'Lago Titicaca');
         
         if (data && data.length > 0) {
-            setDatosHuacachina(data[0]);
+            setDatosTiticaca(data[0]);
             console.log("DATOSSSSSSS", data)
         }
     }
 
     useEffect(() => {
-        fetchHuacachina();
+        fetchTiticaca();
     }, []);
 
-    if (!datosHuacachina) {
+    if (!datosTiticaca) {
         return <div>Cargando información...</div>;
     }
 
     return (
         <Sitios
-            titulo={datosHuacachina.nombre}
-            region={datosHuacachina.region ? datosHuacachina.region.nombre : 'Desconocido'}
-            descripcion={datosHuacachina.descripcion}
-            imagen={datosHuacachina.imagen}
-            precio={datosHuacachina.precio_entrada}
+            titulo={datosTiticaca.nombre}
+            region={datosTiticaca.region ? datosTiticaca.region.nombre : 'Desconocido'}
+            descripcion={datosTiticaca.descripcion}
+            imagen={datosTiticaca.imagen}
+            precio={datosTiticaca.precio_entrada}
         />
     )
 }
 
-export default Huacachina;
+export default Titicaca;

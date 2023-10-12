@@ -20,7 +20,7 @@ function Footer() {
                 </nav>
                 <div className="socials">
                     <h4>Síguenos</h4>
-                    <ul className='flex'>
+                    <ul className=''>
                         <li><a href="#"><i className="pi pi-facebook mr-2"></i>Facebook</a></li>
                         <li><a href="#"><i className="pi pi-instagram mr-2"></i>Instagram</a></li>
                         <li><a href="#"><i className="pi pi-twitter mr-2"></i>Twitter</a></li>
@@ -29,9 +29,7 @@ function Footer() {
                 <div className="contact-info">
                     <h4>Contacto</h4>
                     <div>
-                        123 City St, Ciudad, País
-                        Tel: (123) 456-7890
-                        Email: info@citytours.com
+                        En una Galaxía, muy, muy lejana...
                     </div>
                 </div>
             </div>

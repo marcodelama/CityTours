@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { supabase } from '../../supabase/createClient';
 import Sitios from '../Sitios';
 
-function Huacachina() {
-    const [datosHuacachina, setDatosHuacachina] = useState(null);
+function CañonColca() {
+    const [datosColca, setDatosColca] = useState(null);
 
-    async function fetchHuacachina() {
+    async function fetchColca() {
         const { data } = await supabase
             .from('sitios_turisticos')
             .select(`
@@ -15,31 +15,31 @@ function Huacachina() {
             precio_entrada,
             region: id_region (nombre)
         `)
-            .eq('nombre', 'Laguna Huacachina');
+            .eq('nombre', 'Cañón del Colca');
         
         if (data && data.length > 0) {
-            setDatosHuacachina(data[0]);
+            setDatosColca(data[0]);
             console.log("DATOSSSSSSS", data)
         }
     }
 
     useEffect(() => {
-        fetchHuacachina();
+        fetchColca();
     }, []);
 
-    if (!datosHuacachina) {
+    if (!datosColca) {
         return <div>Cargando información...</div>;
     }
 
     return (
         <Sitios
-            titulo={datosHuacachina.nombre}
-            region={datosHuacachina.region ? datosHuacachina.region.nombre : 'Desconocido'}
-            descripcion={datosHuacachina.descripcion}
-            imagen={datosHuacachina.imagen}
-            precio={datosHuacachina.precio_entrada}
+            titulo={datosColca.nombre}
+            region={datosColca.region ? datosColca.region.nombre : 'Desconocido'}
+            descripcion={datosColca.descripcion}
+            imagen={datosColca.imagen}
+            precio={datosColca.precio_entrada}
         />
     )
 }
 
-export default Huacachina;
+export default CañonColca;
