@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../../Estilos/Boton.css';
 import VentanaEmergente from './VentanaEmergente'; 
 
-function Boton() {
+function Boton({paquetes}) {
   const [ventanaAbierta, setVentanaAbierta] = useState(false);
 
   const abrirVentana = () => {
@@ -15,8 +15,8 @@ function Boton() {
 
   return (
     <div>
-      <button onClick={abrirVentana}>RESERVA</button>
-      <VentanaEmergente isOpen={ventanaAbierta} onClose={cerrarVentana} />
+      <button className = "BotonReserva" onClick={abrirVentana}>RESERVA</button>
+      <VentanaEmergente isOpen={ventanaAbierta} onClose={cerrarVentana} paquetes={paquetes} />
     </div>
   );
 }

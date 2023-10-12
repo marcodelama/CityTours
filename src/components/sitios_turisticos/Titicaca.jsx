@@ -6,20 +6,23 @@ function Titicaca() {
     const [datosTiticaca, setDatosTiticaca] = useState(null);
 
     async function fetchTiticaca() {
-        const { data } = await supabase
+        const { data: sitiosData } = await supabase
             .from('sitios_turisticos')
-            .select(`
-            nombre, 
-            descripcion, 
-            imagen, 
-            precio_entrada,
-            region: id_region (nombre)
-        `)
+            .select('*, region: id_region (nombre)')
             .eq('nombre', 'Lago Titicaca');
         
-        if (data && data.length > 0) {
-            setDatosTiticaca(data[0]);
-            console.log("DATOSSSSSSS", data)
+        if (sitiosData && sitiosData.length > 0) {
+            const sitio = sitiosData[0];
+            
+            const { data: paquetesData } = await supabase
+                .from('paquetes_turisticos')
+                .select('*')
+                .eq('id_sitios', sitio.id_sitios);
+    
+            setDatosTiticaca({
+                ...sitio,
+                paquetes: paquetesData
+            });
         }
     }
 
@@ -38,6 +41,7 @@ function Titicaca() {
             descripcion={datosTiticaca.descripcion}
             imagen={datosTiticaca.imagen}
             precio={datosTiticaca.precio_entrada}
+            paquetes={datosTiticaca.paquetes}
         />
     )
 }

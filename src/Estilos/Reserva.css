@@ -1,0 +1,17 @@
+th {
+  background-color: #007BFF;
+  color: white;
+  padding: 10px;
+  text-align: left;
+}
+
+/* Estilo para las celdas de datos */
+td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+
+tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}

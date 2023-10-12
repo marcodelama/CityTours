@@ -13,8 +13,11 @@ function Sitios({ titulo, region, descripcion, imagen, precio, paquetes, platos 
                         <h2 className={region && region.length > 6 ? 'bg-rojo' : 'bg-verde'}>{region}</h2>
                     </div>
                     <div className='font-24 mb-5'>{descripcion}</div>
-                    <div className='font-20'><b>Precio del viaje (Ida/Vuelta): S/.{precio}</b>
-                        <Boton />
+                    <div className='font-20'><b>Precio del viaje (Ida/Vuelta): S/.{precio} </b>
+                        <div className="button-container001">
+                            <Boton paquetes={paquetes}/>
+                        </div>
+
                     </div>
                 </div>
                 <div className='w-full flex align-items-center '>
@@ -25,7 +28,7 @@ function Sitios({ titulo, region, descripcion, imagen, precio, paquetes, platos 
 
             <div className='flex row justify-content-around'>
                 <div className='flex justify-content-center mb-5 bg-verde w-6'>PAQUETES</div>
-                <div className='flex row w-6'>
+                <div className='flex row w-7 mb-5'>
                     {paquetes && paquetes.map(paquete => (
                         <div key={paquete.id_paquete} className='paquete-contenedor'>
                             <img src={paquete.imagenes} className='paquete-imagen' />

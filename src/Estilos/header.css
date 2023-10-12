@@ -5,7 +5,7 @@ body{
 }
 
 .header {
-    background-color: #fdfeff;
+    background-color: #fffdff;
     padding: 10px;
 }
 
@@ -67,17 +67,19 @@ a{
     align-items: center;
 }
 
-.header-nav li{
+
+.nav-item:hover{
+    background: #949494;
+    border-radius: 20px;
+
+}
+.header-nav {
+    display: flex;
+    align-items: center;
+    list-style: none;
+  }
+  
+  .nav-item {
+    margin-right: 90px;
     padding: 5px;
-}
-
-.header-nav .white:hover{
-    background: #b6b6b6;
-    border-radius: 25px;
-}
-
-@media (max-width:380px){
-    ul{
-        display: none !important;
-    }
-}
+  }
