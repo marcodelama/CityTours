@@ -3,7 +3,7 @@
 .footer-content {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
   background-color: #333;
   color: #fff;
   padding: 30px;
@@ -51,4 +51,9 @@ nav {
 
 nav a {
   color: #fff;
+}
+
+.socials li:hover,
+.footer-nav li:hover{
+  font-size: 24px ;
 }

@@ -1,30 +1,31 @@
-.center{
-    text-align: center;
-}
-
-.font-24{
-    font-size: 24px;
-}
-
-.font-20{
+body {
+    font-family: 'Tilt Neon', sans-serif;
     font-size: 20px;
 }
 
-img:hover{
+.center {
+    text-align: center;
+}
+
+.font-24 {
+    font-size: 24px;
+}
+
+.font-20 {
+    font-size: 20px;
+}
+
+img:hover {
     opacity: 0.8;
     cursor: pointer;
 }
 
-.borde{
-    border: 2px solid #222;
-}
-
-.bg-verde{
+.bg-verde {
     background: #34E0A1;
     margin: 0 35%;
 }
 
-.bg-rojo{
+.bg-rojo {
     background-color: #ff0000;
     margin: 0 25%;
 }
