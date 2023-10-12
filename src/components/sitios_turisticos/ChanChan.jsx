@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { supabase } from '../../supabase/createClient';
 import Sitios from '../Sitios';
 
-function Huacachina() {
-    const [datosHuacachina, setDatosHuacachina] = useState(null);
+function ChanChan() {
+    const [datosChanChan, setDatosChanChan] = useState(null);
 
-    async function fetchHuacachina() {
+    async function fetchChanChan() {
         const { data } = await supabase
             .from('sitios_turisticos')
             .select(`
@@ -15,30 +15,30 @@ function Huacachina() {
             precio_entrada,
             region: id_region (nombre)
         `)
-            .eq('nombre', 'Laguna Huacachina');
+            .eq('nombre', 'Zona Arqueológica Chan Chan');
         
         if (data && data.length > 0) {
-            setDatosHuacachina(data[0]);
+            setDatosChanChan(data[0]);
         }
     }
 
     useEffect(() => {
-        fetchHuacachina();
+        fetchChanChan();
     }, []);
 
-    if (!datosHuacachina) {
+    if (!datosChanChan) {
         return <div>Cargando información...</div>;
     }
 
     return (
         <Sitios
-            titulo={datosHuacachina.nombre}
-            region={datosHuacachina.region ? datosHuacachina.region.nombre : 'Desconocido'}
-            descripcion={datosHuacachina.descripcion}
-            imagen={datosHuacachina.imagen}
-            precio={datosHuacachina.precio_entrada}
+            titulo={datosChanChan.nombre}
+            region={datosChanChan.region ? datosChanChan.region.nombre : 'Desconocido'}
+            descripcion={datosChanChan.descripcion}
+            imagen={datosChanChan.imagen}
+            precio={datosChanChan.precio_entrada}
         />
     )
 }
 
-export default Huacachina;
+export default ChanChan;

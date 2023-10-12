@@ -11,11 +11,11 @@ function Header() {
                 <div className="titulo"><a href="">CityTours</a></div>
             </div>
             <ul className="flex align-items-center header-nav">
-                <li><i className="pi pi-map pr-2"></i><a href="">Viajes/Lugares</a></li>
-                <li><i className="pi pi-calendar pr-2"></i><a href="">Mis Reservas</a></li>
-                <li><i className="pi pi-comments pr-2"></i><a href="">Comentarios</a></li>
+                <li className="white"><i className="pi pi-map pr-2"></i><a href="">Viajes/Lugares</a></li>
+                <li className="white"><i className="pi pi-calendar pr-2"></i><a href="">Mis Reservas</a></li>
+                <li className="white"><i className="pi pi-comments pr-2"></i><a href="">Comentarios</a></li>
                 <li><a className="black" href="">Contacto</a></li>
-                <li><i className="pi pi-users pr-2"></i><a href="">Nosotros</a></li>
+                <li className="white"><i className="pi pi-users pr-2"></i><a href="">Nosotros</a></li>
             </ul>
         </div>
     )

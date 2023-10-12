@@ -4,7 +4,7 @@ import '../Estilos/Footer.css'
 function Footer() {
     return (
         <div>
-            <div className="footer-content">
+            <div className="footer-content gap-7">
                 
                 <div className="branding">
                     <h3>CityTours</h3>
@@ -20,7 +20,7 @@ function Footer() {
                 </nav>
                 <div className="socials">
                     <h4>Síguenos</h4>
-                    <ul className=''>
+                    <ul>
                         <li><a href="#"><i className="pi pi-facebook mr-2"></i>Facebook</a></li>
                         <li><a href="#"><i className="pi pi-instagram mr-2"></i>Instagram</a></li>
                         <li><a href="#"><i className="pi pi-twitter mr-2"></i>Twitter</a></li>
@@ -31,6 +31,7 @@ function Footer() {
                     <div>
                         En una Galaxía, muy, muy lejana...
                     </div>
+                    <p>916391110 | Atención de lunes a sábado</p>
                 </div>
             </div>
             <div className="footer-bottom flex align-items-center justify-content-center">

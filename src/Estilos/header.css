@@ -58,11 +58,6 @@ a{
     transition: font-size 0.3s ease; 
 }
 
-a:hover{
-    font-size: 18px;
-    transition: font-size 0.3s ease;
-}
-
 .black{
     background: #222;
     padding:3px 20px;
@@ -72,11 +67,13 @@ a:hover{
     align-items: center;
 }
 
-
-.header-nav li:hover{
-    background: #949494;
-    border-radius: 25px;
+.header-nav li{
     padding: 5px;
+}
+
+.header-nav .white:hover{
+    background: #b6b6b6;
+    border-radius: 25px;
 }
 
 @media (max-width:380px){

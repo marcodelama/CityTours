@@ -20,8 +20,13 @@ import Titicaca from './sitios_turisticos/Titicaca';
 import CañonColca from './sitios_turisticos/CañonColca';
 import MacchuPicchu from './sitios_turisticos/MacchuPicchu';
 import Plaza from './sitios_turisticos/Plaza';
+import ChanChan from './sitios_turisticos/ChanChan';
+import Sechura from './sitios_turisticos/Sechura';
+import Kuelap from './sitios_turisticos/Kuelap';
+import ChavinHuantar from './sitios_turisticos/ChavinHuantar';
+import LineasNazca from './sitios_turisticos/LineasNazca';
 
-function Login() {
+function PagePrincipal() {
     const settings = {
         dots: true,
         infinite: true,
@@ -100,8 +105,9 @@ function Login() {
                     selectedLugar && selectedLugar.nombre === "Laguna Huacachina" && <Huacachina />
                 }
                 {
-                    selectedLugar && selectedLugar.nombre === "Lago Titicaca" && <Titicaca />
+                    selectedLugar && selectedLugar.nombre === "Lago Titicaca" && <Titicaca/>
                 }
+                
                 {
                     selectedLugar && selectedLugar.nombre === "Cañón del Colca" && <CañonColca />
                 }
@@ -112,19 +118,24 @@ function Login() {
                     selectedLugar && selectedLugar.nombre === "Plaza de Armas de Cusco" && <Plaza/>
                 }
                 {
-                    selectedLugar && selectedLugar.nombre === "Zona Arqueológica Chan Chan" && <Titicaca />
+                    selectedLugar && selectedLugar.nombre === "Zona Arqueológica Chan Chan" && <ChanChan />
                 }
                 {
-                    selectedLugar && selectedLugar.nombre === "Fortaleza de Kuelap" && <Titicaca />
+                    selectedLugar && selectedLugar.nombre === "Fortaleza de Kuélap" && <Kuelap />
                 }
                 {
-                    selectedLugar && selectedLugar.nombre === "Desierto de Sechura" && <Titicaca />
+                    selectedLugar && selectedLugar.nombre === "Desierto de Sechura" && <Sechura />
                 }
-
+                {
+                    selectedLugar && selectedLugar.nombre === "Chavín de Huantar" && <ChavinHuantar />
+                }
+                {
+                    selectedLugar && selectedLugar.nombre === "Líneas de Nazca" && <LineasNazca />
+                }
                 <Footer />
             </div>
         </>
     );
 }
 
-export default Login;
+export default PagePrincipal;

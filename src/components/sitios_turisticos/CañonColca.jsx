@@ -19,7 +19,6 @@ function CañonColca() {
         
         if (data && data.length > 0) {
             setDatosColca(data[0]);
-            console.log("DATOSSSSSSS", data)
         }
     }
 

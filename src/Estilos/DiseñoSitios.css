@@ -1,30 +1,55 @@
-.center{
-    text-align: center;
-}
-
-.font-24{
-    font-size: 24px;
-}
-
-.font-20{
+body {
+    font-family: 'Tilt Neon', sans-serif;
     font-size: 20px;
 }
 
-img:hover{
+.center {
+    text-align: center;
+}
+
+.font-24 {
+    font-size: 24px;
+}
+
+.font-20 {
+    font-size: 20px;
+}
+
+img:hover {
     opacity: 0.8;
     cursor: pointer;
 }
 
-.borde{
-    border: 2px solid #222;
-}
-
-.bg-verde{
+.bg-verde {
     background: #34E0A1;
     margin: 0 35%;
 }
 
-.bg-rojo{
+.bg-rojo {
     background-color: #ff0000;
     margin: 0 25%;
+}
+
+.colorExplora{
+    color: #ff00b3;
+}
+
+.paquete-contenedor {
+    position: relative;
+    width: 50%;
+}
+
+.paquete-imagen {
+    width: 100%;
+    height: 300px;
+}
+
+.paquete-nombre {
+    position: absolute;
+    top: 200px; /* ajusta según la ubicación exacta que desees para el nombre */
+    width: 90%; /* ajusta según la ubicación exacta que desees para el nombre */
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    border-radius: 5px;
 }
