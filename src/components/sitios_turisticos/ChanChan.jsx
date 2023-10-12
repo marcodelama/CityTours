@@ -19,7 +19,6 @@ function ChanChan() {
         
         if (data && data.length > 0) {
             setDatosChanChan(data[0]);
-            console.log("DATOSSSSSSS", data)
         }
     }
 

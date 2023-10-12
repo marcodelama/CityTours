@@ -19,7 +19,6 @@ function Huacachina() {
         
         if (data && data.length > 0) {
             setDatosHuacachina(data[0]);
-            console.log("DATOSSSSSSS", data)
         }
     }
 

@@ -1,25 +1,28 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { supabase } from '../../supabase/createClient';
 import Sitios from '../Sitios';
 
-function MacchuPicchu(){
+function MacchuPicchu() {
     const [datosMP, setDatosMP] = useState(null);
 
     async function fetchMP() {
-        const { data } = await supabase
+        const { data: sitiosData } = await supabase
             .from('sitios_turisticos')
-            .select(`
-            nombre, 
-            descripcion, 
-            imagen, 
-            precio_entrada,
-            region: id_region (nombre)
-        `)
+            .select('*, region: id_region (nombre)')
             .eq('nombre', 'Macchu Picchu');
         
-        if (data && data.length > 0) {
-            setDatosMP(data[0]);
-            console.log("DATOSSSSSSS", data)
+        if (sitiosData && sitiosData.length > 0) {
+            const sitio = sitiosData[0];
+            
+            const { data: paquetesData } = await supabase
+                .from('paquetes_turisticos')
+                .select('*')
+                .eq('id_sitios', sitio.id_sitios);
+    
+            setDatosMP({
+                ...sitio,
+                paquetes: paquetesData
+            });
         }
     }
 
@@ -38,6 +41,7 @@ function MacchuPicchu(){
             descripcion={datosMP.descripcion}
             imagen={datosMP.imagen}
             precio={datosMP.precio_entrada}
+            paquetes={datosMP.paquetes}
         />
     )
 }

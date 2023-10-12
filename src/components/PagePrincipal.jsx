@@ -26,7 +26,7 @@ import Kuelap from './sitios_turisticos/Kuelap';
 import ChavinHuantar from './sitios_turisticos/ChavinHuantar';
 import LineasNazca from './sitios_turisticos/LineasNazca';
 
-function Login() {
+function PagePrincipal() {
     const settings = {
         dots: true,
         infinite: true,
@@ -101,9 +101,11 @@ function Login() {
                         onChange={(e) => setSelectedLugar(e.value)}
                         style={{ height: "50px", width: "20%", marginBottom: "30px" }} />
                 </div>
-
                 {
                     selectedLugar && selectedLugar.nombre === "Laguna Huacachina" && <Huacachina />
+                }
+                {
+                    selectedLugar && selectedLugar.nombre === "Lago Titicaca" && <Titicaca/>
                 }
                 
                 {
@@ -130,11 +132,10 @@ function Login() {
                 {
                     selectedLugar && selectedLugar.nombre === "Líneas de Nazca" && <LineasNazca />
                 }
-
                 <Footer />
             </div>
         </>
     );
 }
 
-export default Login;
+export default PagePrincipal;

@@ -19,6 +19,8 @@ body{
   /* Estilos para las imágenes en el slider */
   .SliderImg {
     max-width: 100%; /* Asegura que las imágenes no excedan el ancho del contenedor */
-    max-height: 500px;
+    max-height: 800px;
     margin: 0 auto; /* Centra horizontalmente la imagen */
   }
+
+
