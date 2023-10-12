@@ -16,8 +16,7 @@
     background: #fff;
     padding: 20px;
     border-radius: 5px;
-    width: 700px;
-    height: 800px;
+    width: 800px;
     border: 5px;
     border-color: #00a808;
   }
@@ -59,4 +58,39 @@
 
 .input {
   flex: 2;
+}
+ .BotonReserva {
+  background-color: rgb(143, 209, 137);
+  border-color:rgb(14, 117, 0);
+  border-radius: 10px;
+  color: #fff;
+  border: none;
+  width: 150px;
+ }
+ .price-button-container001 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.button-container001 {
+  margin-left: 10px; /* Ajusta el margen a tu preferencia */
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; /* Espacio entre los pares de label e input, ajusta según sea necesario */
+}
+
+
+input {
+  flex: 2; /* Para que los inputs ocupen dos tercios del espacio disponible */
+}
+input {
+  border-radius: 5px; /* Ajusta el valor según el nivel de redondeo que desees */
+  border: 1px solid #30a50d; /* Color del borde inicial */
+  padding: 5px;
+}
+input:focus {
+  border: 1px solid #00ff2a; /* Cambia el color del borde al hacer clic (en este caso, a azul) */
 }

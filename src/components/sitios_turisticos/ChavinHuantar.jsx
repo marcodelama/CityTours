@@ -6,19 +6,23 @@ function ChavinHuantar() {
     const [datosChavinHuantar, setDatosChavinHuantar] = useState(null);
 
     async function fetchChavinHuantar() {
-        const { data } = await supabase
+        const { data: sitiosData } = await supabase
             .from('sitios_turisticos')
-            .select(`
-            nombre, 
-            descripcion, 
-            imagen, 
-            precio_entrada,
-            region: id_region (nombre)
-        `)
+            .select('*, region: id_region (nombre)')
             .eq('nombre', 'Chavín de Huantar');
         
-        if (data && data.length > 0) {
-            setDatosChavinHuantar(data[0]);
+        if (sitiosData && sitiosData.length > 0) {
+            const sitio = sitiosData[0];
+            
+            const { data: paquetesData } = await supabase
+                .from('paquetes_turisticos')
+                .select('*')
+                .eq('id_sitios', sitio.id_sitios);
+    
+            setDatosChavinHuantar({
+                ...sitio,
+                paquetes: paquetesData
+            });
         }
     }
 
@@ -37,6 +41,7 @@ function ChavinHuantar() {
             descripcion={datosChavinHuantar.descripcion}
             imagen={datosChavinHuantar.imagen}
             precio={datosChavinHuantar.precio_entrada}
+            paquetes={datosChavinHuantar.paquetes}
         />
     )
 }

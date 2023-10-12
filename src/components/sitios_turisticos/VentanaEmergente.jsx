@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import '../../Estilos/Boton.css';
+import { Button } from 'primereact/button';
 
-function VentanaEmergente({ isOpen, onClose }) {
+function VentanaEmergente({ isOpen, onClose, paquetes }) {
   const [nombre, setNombre] = useState('');
   const [apellido, setApellido] = useState('');
-  const [opcionSeleccionada, setOpcionSeleccionada] = useState('');
+  const [opcionSeleccionada, setOpcionSeleccionada] = useState([]);
   const [correoElectronico, setCorreoElectronico] = useState('');
-
   if (!isOpen) return null;
 
   const handleNombreChange = (event) => {
@@ -27,54 +27,64 @@ function VentanaEmergente({ isOpen, onClose }) {
 
   return (
     <div className="ventana-emergente">
-      <div className="contenido-ventana">
-        <div >
-          <div>
-            <label htmlFor="nombre">Nombre:</label>
-            <input
-              type="text"
-              id="nombre"
-              value={nombre}
-              onChange={handleNombreChange}
-            />
-         
-        
-            <label htmlFor="apellido">Apellido:</label>
-            <input
-              type="text"
-              id="apellido"
-              value={apellido}
-              onChange={handleApellidoChange}
-            />
-            </div>
-        
-          <div >
-            <label htmlFor="correo">Correo Electrónico:</label>
-            <input
-              type="text"
-              id="correo"
-              value={correoElectronico}
-              onChange={handleCorreoElectronicoChange}
-            />
-          </div>
-          <div >
-            <select
-              id="paquetes"
-              value={opcionSeleccionada}
-              onChange={handleOpcionChange}
-            >
-              <option value="">Paquetes</option>
-              <option value="opcion1">Opcion 1</option>
-              <option value="opcion2">Opcion 2</option>
-              <option value="opcion3">Opcion 3</option>
-            </select>
-          </div>
-          <button className='button01'>Guardar</button>
+      <div className="contenido-ventana ">
 
-          <button className='button02' onClick={onClose}>Cancelar</button>
+        <div className='flex row'>
+          <label className='InputNombre ' htmlFor="nombre">Nombre:</label>
+          <input
+            className='mb-2'
+            type="text"
+            id="nombre"
+            value={nombre}
+            onChange={handleNombreChange}
+          />
+
+
+          <label className='InputApellido' htmlFor="apellido">Apellido:</label>
+          <input
+            type="text"
+            id="apellido"
+            value={apellido}
+            onChange={handleApellidoChange}
+          />
         </div>
-        {/* Otro contenido de la ventana emergente */}
+
+        <div className="input-container">
+          <label style={{ marginTop: '30px' }} htmlFor="correo">Correo Electrónico:</label>
+          <input style={{ marginTop: '30px' }}
+            type="text"
+            id="correo"
+            value={correoElectronico}
+            onChange={handleCorreoElectronicoChange}
+          />
+        </div>
+        <div >
+          <select
+            style={{ height: "50px" }}
+            id="paquetes"
+            value={opcionSeleccionada}
+            onChange={handleOpcionChange}
+          >
+            <option value="">Seleccione un paquete</option>
+            {Array.isArray(paquetes) && paquetes.map(paquete => (
+              <option key={paquete.id_paquete} value={paquete.id_paquete}>
+                {paquete.nombre}
+              </option>
+
+            ))}
+          </select>
+        </div>
+        <div className='flex justify-content-end'>
+          <Button
+            className='btn btn-danger mr-2'
+            onClick={onClose}
+            label='Cancelar' />
+          <Button
+            className='btn btn-success'
+            label='Guardar' />
+        </div>
       </div>
+      {/* Otro contenido de la ventana emergente */}
     </div>
   );
 }

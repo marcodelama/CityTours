@@ -6,19 +6,23 @@ function ChanChan() {
     const [datosChanChan, setDatosChanChan] = useState(null);
 
     async function fetchChanChan() {
-        const { data } = await supabase
+        const { data: sitiosData } = await supabase
             .from('sitios_turisticos')
-            .select(`
-            nombre, 
-            descripcion, 
-            imagen, 
-            precio_entrada,
-            region: id_region (nombre)
-        `)
+            .select('*, region: id_region (nombre)')
             .eq('nombre', 'Zona Arqueológica Chan Chan');
         
-        if (data && data.length > 0) {
-            setDatosChanChan(data[0]);
+        if (sitiosData && sitiosData.length > 0) {
+            const sitio = sitiosData[0];
+            
+            const { data: paquetesData } = await supabase
+                .from('paquetes_turisticos')
+                .select('*')
+                .eq('id_sitios', sitio.id_sitios);
+    
+            setDatosChanChan({
+                ...sitio,
+                paquetes: paquetesData
+            });
         }
     }
 
@@ -37,6 +41,7 @@ function ChanChan() {
             descripcion={datosChanChan.descripcion}
             imagen={datosChanChan.imagen}
             precio={datosChanChan.precio_entrada}
+            paquetes={datosChanChan.paquetes}
         />
     )
 }

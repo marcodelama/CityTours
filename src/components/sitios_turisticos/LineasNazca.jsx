@@ -6,19 +6,23 @@ function LineasNazca() {
     const [datosLineasNazca, setDatosLineasNazca] = useState(null);
 
     async function fetchLineasNazca() {
-        const { data } = await supabase
+        const { data: sitiosData } = await supabase
             .from('sitios_turisticos')
-            .select(`
-            nombre, 
-            descripcion, 
-            imagen, 
-            precio_entrada,
-            region: id_region (nombre)
-        `)
+            .select('*, region: id_region (nombre)')
             .eq('nombre', 'Líneas de Nazca');
         
-        if (data && data.length > 0) {
-            setDatosLineasNazca(data[0]);
+        if (sitiosData && sitiosData.length > 0) {
+            const sitio = sitiosData[0];
+            
+            const { data: paquetesData } = await supabase
+                .from('paquetes_turisticos')
+                .select('*')
+                .eq('id_sitios', sitio.id_sitios);
+    
+            setDatosLineasNazca({
+                ...sitio,
+                paquetes: paquetesData
+            });
         }
     }
 
@@ -37,6 +41,7 @@ function LineasNazca() {
             descripcion={datosLineasNazca.descripcion}
             imagen={datosLineasNazca.imagen}
             precio={datosLineasNazca.precio_entrada}
+            paquetes={datosLineasNazca.paquetes}
         />
     )
 }

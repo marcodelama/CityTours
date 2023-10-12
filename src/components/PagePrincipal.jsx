@@ -59,7 +59,6 @@ function PagePrincipal() {
     return (
         <>
             <div className='Body'>
-                <Header />
                 {/* <Navbar bg="light" expand="lg">
                     <Container>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />

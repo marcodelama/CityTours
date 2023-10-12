@@ -5,25 +5,29 @@ import Sitios from '../Sitios';
 function Huacachina() {
     const [datosHuacachina, setDatosHuacachina] = useState(null);
 
-    async function fetchHuacachina() {
-        const { data } = await supabase
+    async function fetchMP() {
+        const { data: sitiosData } = await supabase
             .from('sitios_turisticos')
-            .select(`
-            nombre, 
-            descripcion, 
-            imagen, 
-            precio_entrada,
-            region: id_region (nombre)
-        `)
+            .select('*, region: id_region (nombre)')
             .eq('nombre', 'Laguna Huacachina');
-        
-        if (data && data.length > 0) {
-            setDatosHuacachina(data[0]);
+
+        if (sitiosData && sitiosData.length > 0) {
+            const sitio = sitiosData[0];
+
+            const { data: paquetesData } = await supabase
+                .from('paquetes_turisticos')
+                .select('*')
+                .eq('id_sitios', sitio.id_sitios);
+
+            setDatosHuacachina({
+                ...sitio,
+                paquetes: paquetesData
+            });
         }
     }
 
     useEffect(() => {
-        fetchHuacachina();
+        fetchMP();
     }, []);
 
     if (!datosHuacachina) {
@@ -37,6 +41,7 @@ function Huacachina() {
             descripcion={datosHuacachina.descripcion}
             imagen={datosHuacachina.imagen}
             precio={datosHuacachina.precio_entrada}
+            paquetes={datosHuacachina.paquetes}
         />
     )
 }

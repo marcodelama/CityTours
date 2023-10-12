@@ -6,20 +6,23 @@ function Kuelap() {
     const [datosKuelap, setDatosKuelap] = useState(null);
 
     async function fetchKuelap() {
-        const { data } = await supabase
+        const { data: sitiosData } = await supabase
             .from('sitios_turisticos')
-            .select(`
-            nombre, 
-            descripcion, 
-            imagen, 
-            precio_entrada,
-            region: id_region (nombre)
-        `)
+            .select('*, region: id_region (nombre)')
             .eq('nombre', 'Fortaleza de Kuélap');
         
-        if (data && data.length > 0) {
-            setDatosKuelap(data[0]);
-            console.log("DATOSSSSSSS", data)
+        if (sitiosData && sitiosData.length > 0) {
+            const sitio = sitiosData[0];
+            
+            const { data: paquetesData } = await supabase
+                .from('paquetes_turisticos')
+                .select('*')
+                .eq('id_sitios', sitio.id_sitios);
+    
+            setDatosKuelap({
+                ...sitio,
+                paquetes: paquetesData
+            });
         }
     }
 
@@ -38,6 +41,7 @@ function Kuelap() {
             descripcion={datosKuelap.descripcion}
             imagen={datosKuelap.imagen}
             precio={datosKuelap.precio_entrada}
+            paquetes={datosKuelap.paquetes}
         />
     )
 }
