@@ -3,7 +3,7 @@ import '../Estilos/DiseñoSitios.css';
 import Boton from './sitios_turisticos/Boton';
 
 
-function Sitios({ titulo, region, descripcion, imagen, precio, paquetes, platos }) {
+function Sitios({ titulo, region, descripcion, imagen, precio, paquetes }) {
     return (
         <>
             <div className='flex justify-content-center gap-3 p-8 bg'>
@@ -13,7 +13,7 @@ function Sitios({ titulo, region, descripcion, imagen, precio, paquetes, platos 
                         <h2 className={region && region.length > 6 ? 'bg-rojo' : 'bg-verde'}>{region}</h2>
                     </div>
                     <div className='font-24 mb-5'>{descripcion}</div>
-                    <div className='font-20'><b>Precio del viaje (Ida/Vuelta): S/.{precio} </b>
+                    <div className='font-20 flex justify-content-evenly'><b>Precio del viaje (Ida/Vuelta): S/.{precio} </b>
                         <div className="button-container001">
                             <Boton paquetes={paquetes}/>
                         </div>
