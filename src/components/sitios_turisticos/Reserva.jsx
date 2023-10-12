@@ -1,32 +1,40 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../../Estilos/Reserva.css'
 import { Button } from 'primereact/button';
+import { supabase } from '../../supabase/createClient'
+
 
 function Reserva() {
-  const [data, setData] = useState([
-    {
-      id: 1,
-      nombre: 'John',
-      apellido: 'Doe',
-      email: 'john.doe@example.com',
-      fecha: '2023-10-11',
-    },
-    {
-      id: 2,
-      nombre: 'Jane',
-      apellido: 'Smith',
-      email: 'jane.smith@example.com',
-      fecha: '2023-10-12',
-    }
-  ]);
-
-  const botones = () => {
-    return(
-    <Button 
-      className='btn btn-danger'
-    />
-    )
+  const [users, setUsers] = useState([]);
+  async function fetchUsers() {
+    const { data } = await supabase
+      .from('usuarios')
+      .select('*')
+    setUsers(data)
+    console.log(data)
   }
+  
+  async function deleteUser(userId) {
+    const { data, error } = await supabase
+      .from('usuarios')
+      .delete()
+      .eq('id_usuarios', userId)
+
+    fetchUsers()
+
+    if (error) {
+      console.log(error)
+    }
+
+    if (data) {
+      console.log(data)
+    }
+  }
+  
+  useEffect(() => {
+    fetchUsers()
+  }, [])
+
   return (
     <div className="flex align-items-center justify-content-center row w-full">
       <div className='flex row w-6'>
@@ -38,19 +46,19 @@ function Reserva() {
               <th>Nombre</th>
               <th>Apellido</th>
               <th>Email</th>
-              <th>Fecha</th>
+              <th>Paquete</th>
               <th>Acciones</th>
             </tr>
           </thead>
           <tbody>
-            {data.map((item) => (
-              <tr key={item.id}>
-                <td>{item.id}</td>
-                <td>{item.nombre}</td>
-                <td>{item.apellido}</td>
-                <td>{item.email}</td>
-                <td>{item.fecha}</td>
-                <td>{()=>botones()}</td>
+            {users.map((user) => (
+              <tr key={user.id_usuarios}>
+                <td>{user.id_usuarios}</td>
+                <td>{user.nombre}</td>
+                <td>{user.apellidos}</td>
+                <td>{user.email}</td>
+                <td>{user.id_paquete}</td>
+                <td><button onClick={() => { deleteUser(user.id_usuarios) }}>Delete</button></td>
               </tr>
             ))}
           </tbody>
